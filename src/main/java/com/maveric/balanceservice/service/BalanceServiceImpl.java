@@ -1,6 +1,7 @@
 package com.maveric.balanceservice.service;
 
 import com.maveric.balanceservice.dto.BalanceDto;
+import com.maveric.balanceservice.exceptionhandler.AccountNotFoundException;
 import com.maveric.balanceservice.exceptionhandler.BalanceNotFoundException;
 import com.maveric.balanceservice.exceptionhandler.BalanceNotFoundException;
 import com.maveric.balanceservice.mapper.BalanceMapper;
@@ -54,6 +55,13 @@ public class BalanceServiceImpl implements BalanceService  {
     public BalanceDto getBalanceDetails(String balanceId) {
         Balance balanceResult=repository.findById(balanceId).orElseThrow(() -> new BalanceNotFoundException("Balance not found"));
         return mapper.map(balanceResult);
+    }
+
+
+    @Override
+    public BalanceDto getBalanceByAccountId(String accountId) {
+        Balance accountResult=repository.findById(accountId).orElseThrow(() -> new AccountNotFoundException("Account not found"));
+        return mapper.map(accountResult);
     }
 
     @Override

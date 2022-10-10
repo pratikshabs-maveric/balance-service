@@ -11,7 +11,10 @@ public interface BalanceService {
 
     public BalanceDto getBalanceDetails(String balanceId);
 
+
+    public BalanceDto getBalanceByAccountId(String accountId);
     public BalanceDto updateBalance(String balanceId,BalanceDto balanceDto);
 
     public String deleteBalance(String balanceId);
+
 }
