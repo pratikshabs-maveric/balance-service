@@ -2,6 +2,7 @@ package com.maveric.balanceservice.model;
 
 
 
+import com.maveric.balanceservice.enumeration.Currency;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Balance {
     private String _id;
     private String accountId;
     private Number amount;
-    private String currency;
+    private Currency currency;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
