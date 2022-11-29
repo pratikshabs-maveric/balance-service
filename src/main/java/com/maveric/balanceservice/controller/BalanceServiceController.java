@@ -42,7 +42,6 @@ public class BalanceServiceController {
         return ResponseEntity.status(HttpStatus.OK).body(balance);
     }
 
-
     @GetMapping("/accounts/{accountId}/balances")
     public ResponseEntity<List<BalanceDto>> getAllBalance(@PathVariable String accountId, @RequestParam int page , @RequestParam int pageSize){
         List<BalanceDto> balance = balanceService.getAllBalance(accountId,page,pageSize);
